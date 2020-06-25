@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CConnectDlgBase</class>
+ <widget class="QDialog" name="CConnectDlgBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>487</width>
+    <height>493</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Connection Setup</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/png/main/res/fronticon.png</normaloff>:/png/main/res/fronticon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+color: rgb(14,87,41);
+</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QVBoxLayout">
+   <item>
+    <layout class="QHBoxLayout">
+     <item>
+      <widget class="QLabel" name="lblServerAddr">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(40, 40, 40);
+border-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+</string>
+       </property>
+       <property name="text">
+        <string>Sala Name/Address</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cbxServerAddr">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(40, 40, 40);
+border-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+</string>
+       </property>
+       <property name="editable">
+        <bool>true</bool>
+       </property>
+       <property name="currentText">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="_2">
+     <item>
+      <widget class="QLabel" name="titlePass">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(40, 40, 40);
+border-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+</string>
+       </property>
+       <property name="text">
+        <string>Password Sala</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="passSala">
+       <property name="focusPolicy">
+        <enum>Qt::WheelFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(40, 40, 40);
+border-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+</string>
+       </property>
+       <property name="editable">
+        <bool>true</bool>
+       </property>
+       <property name="currentText">
+        <string/>
+       </property>
+       <property name="frame">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="lblFilter">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(40, 40, 40);
+border-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+</string>
+       </property>
+       <property name="text">
+        <string>Filter</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="edtFilter">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(40, 40, 40);
+border-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="chbExpandAll">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(40, 40, 40);
+border-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+</string>
+       </property>
+       <property name="text">
+        <string>Show All Musicians</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTreeWidget" name="lvwServers">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>100</horstretch>
+       <verstretch>100</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(40, 40, 40);
+border-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+ border-image:  url(:/png/main/res/fondoo.png);</string>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="tabKeyNavigation">
+      <bool>true</bool>
+     </property>
+     <column>
+      <property name="text">
+       <string>Nombre de la Sala</string>
+      </property>
+      <property name="background">
+       <color alpha="5">
+        <red>5</red>
+        <green>5</green>
+        <blue>5</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Ping Time</string>
+      </property>
+      <property name="background">
+       <color alpha="5">
+        <red>5</red>
+        <green>5</green>
+        <blue>5</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Músicos </string>
+      </property>
+      <property name="textAlignment">
+       <set>AlignLeading|AlignVCenter</set>
+      </property>
+      <property name="background">
+       <color alpha="5">
+        <red>5</red>
+        <green>5</green>
+        <blue>5</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Location</string>
+      </property>
+      <property name="textAlignment">
+       <set>AlignTrailing|AlignTop</set>
+      </property>
+      <property name="background">
+       <color>
+        <red>5</red>
+        <green>5</green>
+        <blue>5</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="NoBrush">
+        <color alpha="255">
+         <red>14</red>
+         <green>87</green>
+         <blue>41</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout">
+     <item>
+      <widget class="QPushButton" name="butCancel">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(40, 40, 40);
+border-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+</string>
+       </property>
+       <property name="text">
+        <string>C&amp;ancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="butConnect">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(40, 40, 40);
+border-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+</string>
+       </property>
+       <property name="text">
+        <string>&amp;Connect</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
